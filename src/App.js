@@ -1,6 +1,6 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider, Route } from 'react-router-dom';
-import { Navbar, Sidebar, Footer } from './components';
+import { Layout } from './components';
 import {
 	Home,
 	Products,
@@ -14,7 +14,7 @@ import {
 
 const router = createBrowserRouter([
 	{
-		element: <Navbar />,
+		element: <Layout />,
 		children: [
 			{
 				path: '/',
