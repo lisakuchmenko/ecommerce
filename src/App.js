@@ -14,21 +14,27 @@ import {
 
 const router = createBrowserRouter([
 	{
-		path: '/',
-		element: <Home />,
-	},
-	{ path: 'about', element: <About /> },
-	{ path: 'cart', element: <Cart /> },
-	{ path: 'products', element: <Products /> },
-	{ path: 'products/:id', element: <SingleProduct /> },
-	{ path: 'about', element: <About /> },
-	{
-		path: 'checkout',
-		element: (
-			<PrivateRoute>
-				<Checkout />
-			</PrivateRoute>
-		),
+		element: <Navbar />,
+		children: [
+			{
+				path: '/',
+				element: <Home />,
+			},
+			{ path: 'about', element: <About /> },
+			{ path: 'cart', element: <Cart /> },
+			{ path: 'products', element: <Products /> },
+			{ path: 'products/:id', element: <SingleProduct /> },
+			{ path: 'about', element: <About /> },
+			{
+				path: 'checkout',
+				element: (
+					<PrivateRoute>
+						<Checkout />
+					</PrivateRoute>
+				),
+			},
+			{ path: '*', element: <Error /> },
+		],
 	},
 ]);
 
