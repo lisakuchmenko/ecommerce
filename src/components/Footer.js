@@ -4,7 +4,11 @@ import styled from 'styled-components';
 const Footer = () => {
 	return (
 		<>
-			<h4>footer</h4>
+			<Wrapper>
+				<h5>&copy; {new Date().getFullYear()}</h5>
+				<span>ComfySloth</span>
+				<h5>All rights reserved</h5>
+			</Wrapper>
 		</>
 	);
 };
@@ -22,7 +26,7 @@ const Wrapper = styled.footer`
 	}
 	h5 {
 		color: var(--clr-white);
-		margin: 0.1rem;
+		margin: 0.4rem;
 
 		font-weight: 400;
 		text-transform: none;
